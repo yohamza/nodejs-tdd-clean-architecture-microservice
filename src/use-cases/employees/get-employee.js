@@ -1,6 +1,5 @@
-const getEmployee = (employeesDB) => {
-
-    return async function get(info) {
+const getEmployeesUseCase = (employeesDB) => {
+    return async function select(info) {
         let data = [];
         const { id } = info;
 
@@ -50,4 +49,4 @@ const getEmployee = (employeesDB) => {
 
 }
 
-module.exports = getEmployee;
+module.exports = getEmployeesUseCase;

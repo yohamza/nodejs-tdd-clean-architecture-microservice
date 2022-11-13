@@ -1,6 +1,6 @@
 const {
     createEmployeeUseCase,
-    getEmployeeUseCase,
+    getEmployeesUseCase,
     deleteEmployeeUseCase,
     updateEmployeeUseCase
 } = require('../../use-cases/employees/app');
@@ -11,7 +11,7 @@ const deleteEmployee = require('./delete-employee');
 const updateEmployee = require('./update-employee');
 
 const createEmployeeController = createEmployee({ createEmployeeUseCase });
-const getEmployeeController = getEmployee({ getEmployeeUseCase });
+const getEmployeeController = getEmployee({ getEmployeesUseCase });
 const deleteEmployeeController = deleteEmployee({ deleteEmployeeUseCase });
 const updateEmployeeController = updateEmployee({ updateEmployeeUseCase });
 

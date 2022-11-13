@@ -3,8 +3,6 @@ const getEmployees = ({ getEmployeesUseCase }) => {
 
         try {
 
-            console.log(httpRequest);
-
             const { source = {}, ...info } = httpRequest.body;
 
             source.ip = httpRequest.ip

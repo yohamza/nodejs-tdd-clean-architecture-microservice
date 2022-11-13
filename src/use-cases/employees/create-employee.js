@@ -1,4 +1,4 @@
-const createEmployee = ({ createEmployeeReqValidation, employeesDb }) => {
+const createEmployeeUseCase = ({ createEmployeeReqValidation, employeesDb }) => {
     return async function post(info) {
         let data = await createEmployeeReqValidation(info);
 
@@ -24,4 +24,4 @@ const createEmployee = ({ createEmployeeReqValidation, employeesDb }) => {
     }
 }
 
-module.exports = createEmployee;
+module.exports = createEmployeeUseCase;

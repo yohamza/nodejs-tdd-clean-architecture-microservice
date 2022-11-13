@@ -1,4 +1,4 @@
-const updateEmployee = ({ updateEmployeeReqValidation, employeesDb }) => {
+const updateEmployeeUseCase = ({ updateEmployeeReqValidation, employeesDb }) => {
     return async function update(info) {
         let data = await updateEmployeeReqValidation(info);
 
@@ -27,4 +27,4 @@ const updateEmployee = ({ updateEmployeeReqValidation, employeesDb }) => {
 
 }
 
-module.exports = updateEmployee;
+module.exports = updateEmployeeUseCase;

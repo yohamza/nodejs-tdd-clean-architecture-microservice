@@ -1,4 +1,4 @@
-const deleteEmployee = ({ employeesDb }) => {
+const deleteEmployeeUseCase = ({ employeesDb }) => {
     return async function destroy(info) {
 
         const { id } = info;
@@ -20,4 +20,4 @@ const deleteEmployee = ({ employeesDb }) => {
     }
 }
 
-module.exports = deleteEmployee;
+module.exports = deleteEmployeeUseCase;

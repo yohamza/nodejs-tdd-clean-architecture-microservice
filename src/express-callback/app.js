@@ -1,6 +1,5 @@
 const makeExpressCallback = (controller) => {
-    return async (req, res, next) => {
-        console.log(req);
+    return async (req, res) => {
         const httpRequest = {
             body: req.body,
             query: req.query,
@@ -26,7 +25,7 @@ const makeExpressCallback = (controller) => {
             res.status(httpResponse.statusCode).send(httpResponse.body);
 
         } catch (error) {
-            res.sendStatus(500);
+            res.status(500).send(error);
         }
     };
 };
