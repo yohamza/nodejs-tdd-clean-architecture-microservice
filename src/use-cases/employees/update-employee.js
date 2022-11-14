@@ -1,4 +1,4 @@
-const updateEmployeeUseCase = ({ updateEmployeeReqValidation, employeesDb }) => {
+const updateEmployeeUseCase = ({ updateEmployeeReqValidation, employeesDB }) => {
     return async function update(info) {
         let data = await updateEmployeeReqValidation(info);
 
@@ -9,13 +9,13 @@ const updateEmployeeUseCase = ({ updateEmployeeReqValidation, employeesDb }) => 
             age: data.getAge(),
         };
 
-        const checkId = await employeesDb.selectOne(data.id);
+        const checkId = await employeesDB.selectOne(data.id);
         if (checkId.rowCount == 0) throw new Error('Employee doesn\t exist');
 
-        const checkIfNameExists = await employeesDb.checkNameExistsUpdate({ data });
-        if (checkIfNameExists.rowCount == 0) throw new Error('Employee already exists. Choose other name');
+        const checkIfNameExists = await employeesDB.checkNameExistsUpdate({ data });
+        if (checkIfNameExists.rowCount > 0) throw new Error('Employee already exists. Choose other name');
 
-        const res = await employeesDb.updateEmployee({ data });
+        const res = await employeesDB.updateEmployee({ data });
 
         let message = 'Employee was not updated. Please check back later';
 

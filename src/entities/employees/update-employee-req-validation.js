@@ -1,5 +1,5 @@
 const updateEmployeeReqValidation = () => {
-    return function update(id, { firstName, lastName, age } = {}) {
+    return function update({ id, firstName, lastName, age } = {}) {
         if (!id) {
             throw new Error("Please enter ID of employee.");
         }

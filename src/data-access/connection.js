@@ -5,4 +5,4 @@ const connection = connectionConfig({ dotenv, pg });
 const services = Object.freeze({ connection });
 
 module.exports = services;
-module.exports = { connection };
+module.exports = connection;

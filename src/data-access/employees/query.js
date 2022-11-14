@@ -11,8 +11,8 @@ const query = ({ connection, models }) => {
 
     async function insertNewEmployee({ data }) {
         try {
-            const Employee = models.Employee;
-            const res = await Employee.create(data);
+            const Employees = models.Employees;
+            const res = await Employees.create(data);
             return res;
         } catch (error) {
             console.log('error: ', error);
@@ -84,7 +84,7 @@ const query = ({ connection, models }) => {
         }
     }
 
-    async function selectOne({ id }) {
+    async function selectOne(id) {
         try {
             const pool = await connection();
 
@@ -109,8 +109,8 @@ const query = ({ connection, models }) => {
     async function updateEmployee({ data }) {
 
         try {
-            const Employee = models.Employee;
-            const res = await Employee.update(
+            const Employees = models.Employees;
+            const res = await Employees.update(
                 {
                     firstName: data.firstName,
                     lastName: data.lastName,
@@ -129,7 +129,7 @@ const query = ({ connection, models }) => {
         }
     }
 
-    async function deleteEmployee({ id }) {
+    async function deleteEmployee(id) {
 
         try {
             const Employee = models.Employee;

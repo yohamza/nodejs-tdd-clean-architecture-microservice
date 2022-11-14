@@ -1,4 +1,4 @@
-const createEmployeeUseCase = ({ createEmployeeReqValidation, employeesDb }) => {
+const createEmployeeUseCase = ({ createEmployeeReqValidation, employeesDB }) => {
     return async function post(info) {
         let data = await createEmployeeReqValidation(info);
 
@@ -9,12 +9,12 @@ const createEmployeeUseCase = ({ createEmployeeReqValidation, employeesDb }) => 
         }
 
         //check if employee already exists
-        const check = await employeesDb.checkNameExists({ data });
+        const check = await employeesDB.checkNameExists({ data });
         if (check.rowCount > 0) {
             throw new Error('Employee already exists');
         }
         //insert employee
-        const res = await employeesDb.insertNewEmployee({ data });
+        const res = await employeesDB.insertNewEmployee({ data });
 
         let message = 'There was some error while inserting the employee';
         if (res) message = 'Employee added succesfully';
