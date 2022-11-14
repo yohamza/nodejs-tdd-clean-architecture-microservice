@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon ./src/app",
-    "start": "node ./src/app"
+    "dev": "nodemon ./src/bin/www",
+    "start": "node ./src/bin/www"
   },
   "prettier": {
     "singleQuote": true
